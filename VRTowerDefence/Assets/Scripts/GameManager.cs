@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public enum Platform
+{
+    Windows,
+    Android,
+    i0S,
+    WindowsMobile
+}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance;
+    public Platform CurrentPlatform;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 }
