@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerShooter : MonoBehaviour {
-
+/*
     public GameObject shot;
 
     private bool gotHit;
@@ -24,4 +24,5 @@ public class PlayerShooter : MonoBehaviour {
             if(Physics.Raycast)
         }
 	}
+    */
 }
