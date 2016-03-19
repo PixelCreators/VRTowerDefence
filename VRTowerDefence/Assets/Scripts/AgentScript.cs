@@ -6,13 +6,13 @@ public class AgentScript : MonoBehaviour {
     public Transform target;
     NavMeshAgent agent;
 
-
 	// Use this for initialization
 	void Start ()
     {
         target = FindObjectOfType<WallController>().transform;
         agent = GetComponent<NavMeshAgent>();
-	}
+        transform.LookAt(target);
+    }
 	
 	// Update is called once per frame
 	void Update ()
