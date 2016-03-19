@@ -36,6 +36,7 @@ public class HMDResetButton : MonoBehaviour {
             {
                 cardboard.Recenter();
            
+
                 ResetInProgress = false;
                 break;
             }
