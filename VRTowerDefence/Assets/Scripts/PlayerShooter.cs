@@ -10,7 +10,6 @@ public class PlayerShooter : MonoBehaviour {
     public int screenHeight;
 
     public float fireRate;
-    public float distance;
     private float nextFire;
 
     private Rigidbody rb;
