@@ -6,6 +6,8 @@ public class CardboardManager : MonoBehaviour
     public GameObject WPCam;
     public GameObject OtherCam;
 
+    private PlayerController player;
+
 	void Awake ()
     {
         gameManager = GameManager.GetInstance();
@@ -13,5 +15,12 @@ public class CardboardManager : MonoBehaviour
             WPCam.SetActive(true);
         else
             OtherCam.SetActive(true);
+
+        player = FindObjectOfType<PlayerController>();
+    }
+    
+    public void HMDReset()
+    {
+
     }
 }
