@@ -13,8 +13,8 @@ public class ScreenFadeInOut : MonoBehaviour
     {
         image.color = Color.clear;
         image.enabled = false;
-        Debug.Log(image.color.a);
-        Debug.Log(image);
+        //Debug.Log(image.color.a);
+        //Debug.Log(image);
     }
 
     void Start()
