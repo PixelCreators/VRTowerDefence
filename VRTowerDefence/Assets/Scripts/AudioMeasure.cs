@@ -28,10 +28,9 @@ public class AudioMeasure : MonoBehaviour
         
         var st = "";
         var na = "";
-        if (DbValue >= -15)
+        if (DbValue >= -10)
             playerShooter.Fire();
-
-       Debug.Log(PitchValue);
+        
         if (PitchValue > 1200)
             na = "dwizd";
 

@@ -13,6 +13,7 @@ public class PlayerShooter : MonoBehaviour {
     private int screenWidth;
     private int screenHeight;
 
+    bool fired = false;
     // Use this for initialization
     void Start ()
     {
@@ -31,9 +32,22 @@ public class PlayerShooter : MonoBehaviour {
 
     public void Fire()
     {
+        if (fired)
+            return;
+
+        fired = true;
         var position = new Vector2(screenWidth / 2, screenHeight / 2);
         var worldPosition = Camera.main.ScreenToWorldPoint(position);
         nextFire = Time.time + fireRate;
         Instantiate(shot, worldPosition, Camera.main.transform.rotation);
+
+        StartCoroutine(Fired());
+    }
+
+    IEnumerator Fired()
+    {
+        Debug.Log("Test");
+        yield return new WaitForSeconds(1.0f);
+        fired = false;
     }
 }
