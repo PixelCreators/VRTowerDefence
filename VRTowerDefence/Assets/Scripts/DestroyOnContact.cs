@@ -20,10 +20,7 @@ public class DestroyOnContact : MonoBehaviour {
         {
             return;
         }
-
-        pointsManager.AddScore(scoreValue);
         Destroy(other.gameObject);
-        Destroy(gameObject);
     }
     
     void OnCollisionEnter(Collision other)
