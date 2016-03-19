@@ -38,6 +38,7 @@ public class HMDResetButton : MonoBehaviour {
            
 
                 ResetInProgress = false;
+                CountDownText.text = "";
                 break;
             }
         }

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PointsManager : MonoBehaviour {
     
     private int score;
-
+    public Text scoreText;
     // Use this for initialization
     void Start ()
     {
@@ -18,6 +19,7 @@ public class PointsManager : MonoBehaviour {
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
+        scoreText.text = "Score: " + score;
     }
 
 }

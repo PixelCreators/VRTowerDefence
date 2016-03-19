@@ -28,7 +28,7 @@ public class AudioMeasure : MonoBehaviour
         
         var st = "";
         var na = "";
-        if (DbValue >= -10)
+        if (DbValue >= -7)
             playerShooter.Fire();
         
         if (PitchValue > 1200)
