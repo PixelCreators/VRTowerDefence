@@ -10,6 +10,7 @@ public class PlayerShooter : MonoBehaviour {
     public int screenHeight;
 
     public float fireRate;
+    public float distance;
     private float nextFire;
 
     private Rigidbody rb;
@@ -25,8 +26,11 @@ public class PlayerShooter : MonoBehaviour {
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
+            var position = new Vector2(screenWidth / 2, screenHeight / 2);
+            var worldPosition = Camera.main.ScreenToWorldPoint(position);
             nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            Instantiate(shot, worldPosition, Camera.main.transform.rotation);
+            Debug.Log(position);
         }
     }
 }
