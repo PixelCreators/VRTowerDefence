@@ -13,12 +13,9 @@ public class PlayerShooter : MonoBehaviour {
     private int screenWidth;
     private int screenHeight;
 
-    private Rigidbody rb;
-
     // Use this for initialization
     void Start ()
     {
-        rb = GetComponent<Rigidbody>();
         screenHeight = Screen.height;
         screenWidth = Screen.width;
     }

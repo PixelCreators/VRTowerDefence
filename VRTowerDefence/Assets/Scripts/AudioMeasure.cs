@@ -7,7 +7,7 @@ public class AudioMeasure : MonoBehaviour
     public float DbValue;
     public float PitchValue;
 
-    private const int QSamples = 1024;
+    private const int QSamples = 512;
     private const float RefValue = 0.1f;
     private const float Threshold = 0.02f;
 
@@ -28,7 +28,7 @@ public class AudioMeasure : MonoBehaviour
         
         var st = "";
         var na = "";
-        if (DbValue >= -5)
+        if (DbValue >= -15)
             playerShooter.Fire();
 
        Debug.Log(PitchValue);
