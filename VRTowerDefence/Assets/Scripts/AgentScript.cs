@@ -10,6 +10,7 @@ public class AgentScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        target = FindObjectOfType<WallController>().transform;
         agent = GetComponent<NavMeshAgent>();
 	}
 	
