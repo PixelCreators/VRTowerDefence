@@ -30,7 +30,6 @@ public class PlayerShooter : MonoBehaviour {
             var worldPosition = Camera.main.ScreenToWorldPoint(position);
             nextFire = Time.time + fireRate;
             Instantiate(shot, worldPosition, Camera.main.transform.rotation);
-            Debug.Log(position);
         }
     }
 }
