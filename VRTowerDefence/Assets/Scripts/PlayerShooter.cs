@@ -8,7 +8,6 @@ public class PlayerShooter : MonoBehaviour {
 
 
     public float fireRate;
-    public float distance;
     private float nextFire;
 
     private int screenWidth;

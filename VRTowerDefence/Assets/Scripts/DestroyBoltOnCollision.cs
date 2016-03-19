@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DestroyBoltOnCollision : MonoBehaviour {
 
+
+
     // Use this for initialization
     void Start() {
 
@@ -19,9 +21,10 @@ public class DestroyBoltOnCollision : MonoBehaviour {
             return;
 
         if (other.tag == "Enemy")
-            other.GetComponent<AgentScript>().Die();
-
+        { 
+        other.GetComponent<AgentScript>().Die();
         Destroy(gameObject);
+        }
     }
 
     void OnTriggerExit(Collider other)
