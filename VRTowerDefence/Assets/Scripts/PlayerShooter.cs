@@ -2,27 +2,35 @@
 using System.Collections;
 
 public class PlayerShooter : MonoBehaviour {
-/*
+
     public GameObject shot;
+    public Transform shotSpawn;
 
-    private bool gotHit;
+    public int screenWidth;
+    public int screenHeight;
 
-	// Use this for initialization
-	void Start ()
+    public float fireRate;
+    public float distance;
+    private float nextFire;
+
+    private Rigidbody rb;
+
+    // Use this for initialization
+    void Start ()
     {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        RaycastHit hit;
-        Ray landingRay = new Ray(transform.position, Vector3.down);
+        rb = GetComponent<Rigidbody>();
+    }
 
-        if(!gotHit)
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            if(Physics.Raycast)
+            var position = new Vector2(screenWidth / 2, screenHeight / 2);
+            var worldPosition = Camera.main.ScreenToWorldPoint(position);
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, worldPosition, Camera.main.transform.rotation);
+            Debug.Log(position);
         }
-	}
-    */
+    }
 }
