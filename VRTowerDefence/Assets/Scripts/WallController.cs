@@ -14,4 +14,12 @@ public class WallController : MonoBehaviour {
     {
         Debug.Log("heheszki");
     }
+
+
+    public void GetDamage(float damage)
+    {
+        WallHP -= damage;
+        if (WallHP <= 0) ;
+            //GameOver
+    }
 }
