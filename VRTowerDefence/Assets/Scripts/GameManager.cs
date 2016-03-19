@@ -11,8 +11,9 @@ public enum Platform
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    private static GameManager Instance;
     public Platform CurrentPlatform;
+    public ScreenFadeInOut ScreenFadeInOut;
 
     void Awake()
     {
@@ -20,5 +21,17 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        ScreenFadeInOut = GetComponent<ScreenFadeInOut>();
+    }
+
+   public static void FadeInOut()
+   {
+        Instance.ScreenFadeInOut.FadeOutIn();
+   }
+
+    public static GameManager GetInstance()
+    {
+        return Instance;
     }
 }

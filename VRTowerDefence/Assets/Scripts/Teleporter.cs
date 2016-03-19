@@ -4,6 +4,13 @@ using System.Collections;
 public class Teleporter : MonoBehaviour
 {
     public float lookTime = 2.0f;
+    private IEnumerator timerCorutine;
+    private PlayerController player;
+
+    void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     // Use this for initialization
     void Start () {
@@ -17,31 +24,26 @@ public class Teleporter : MonoBehaviour
 
     public void SetGazedAt(bool gazedAt)
     {
-        StartCoroutine(WaitTime());
-    
+        Debug.Log("Gaz");
+        timerCorutine = WaitTime();
+        StartCoroutine(timerCorutine);
     }
 
     public void SetGazedOff()
     {
-        StopCoroutine(WaitTime());
+        StopCoroutine(timerCorutine);
         GetComponent<Renderer>().material.color = Color.red;
     }
 
     public void GazedClick()
     {
-
+        player.TeleportTo(this);
+        GetComponent<Renderer>().material.color = Color.green;
     }
 
     public IEnumerator WaitTime()
     {
-        var currentLookTime = 0.0f;
-        while (true)
-        {
-            yield return new WaitForSeconds(lookTime / 60);
-            currentLookTime += lookTime / 60;
-            if (currentLookTime == lookTime)
-                break;
-        }
-        GetComponent<Renderer>().material.color = Color.green;
+        yield return new WaitForSeconds(lookTime);
+        GazedClick();
     }
 }

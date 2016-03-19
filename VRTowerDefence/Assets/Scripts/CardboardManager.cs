@@ -8,7 +8,7 @@ public class CardboardManager : MonoBehaviour
 
 	void Awake ()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.GetInstance();
         if (gameManager.CurrentPlatform == Platform.WindowsMobile)
             WPCam.SetActive(true);
         else
